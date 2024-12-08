@@ -20,6 +20,7 @@ func main() {
 	totalDistance := 0
 	similarityMap := make(map[int]int)
 	for i := range numRows {
+		// part 2 make a map of the right column values count
 		if _, ok := similarityMap[rightColumn[i]]; !ok {
 			similarityMap[rightColumn[i]] = 0
 		}
@@ -34,6 +35,8 @@ func main() {
 		fmt.Println(i, leftColumn[i], rightColumn[i], distance)
 	}
 	fmt.Println("Total distance:", totalDistance)
+
+	// Part 2 bits
 	var similarity int
 	for _, v := range leftColumn {
 		if _, ok := similarityMap[v]; !ok {
